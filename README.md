@@ -106,22 +106,22 @@ During early prototyping stages, web technologies will be utilised because of th
 
 
 ### Milestones
-#### Gather requirements
+#### Gather requirements - 10/09
 Using the techniques outlined in the requirements section of the plan, we will gain understanding of the needs of our users, the problem space, and the intentions for our application. 
 
-#### Implement core functionality in desktop chrome extension
+#### Implement core functionality in desktop chrome extension - 14/09
 We will create a basic live-commenting system that interacts with existing videos like youtube. We will use this design to do further user testing and examine the core mechanic behind our application. 
 
-#### Design basic app
+#### Design basic app - 5/10
 We will develop a basic implementation of our application to be used in further requirements gathering and user analysis studies. This application will be implemented in a simple cross-platform framework like React native, Cordova, or Xamarin
 
-#### Gather feedback
-Using our basic application, we will run process mapping and camera studies on users to test how they will use it, whether the core mechanics are intuitive, and address any flaws in our design.
-
-#### Connect application to content
+#### Connect application to content - 14/10
 Using various APIs, we will connect our application to video content to simulate the experience one might have when using the application. 
 
-#### Implement final prototype
+#### Gather feedback - 19/10
+Using our basic application, we will run process mapping and camera studies on users to test how they will use it, whether the core mechanics are intuitive, and address any flaws in our design.
+
+#### Implement final prototype - 28/10
 During this final stage, small changes will be added and further user-testing will be done as required.
 
 Identify the key tasks that need to be completed and when. Identify: 
