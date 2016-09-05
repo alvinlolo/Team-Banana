@@ -106,6 +106,14 @@ During early prototyping stages, web technologies will be utilised because of th
 
 
 ### Milestones
+
+- [ ] Gather requirements
+- [ ] Implement core functionality in desktp chrome extension
+- [ ] Design basic app
+- [ ] Connect application to content
+- [ ] Gather feedback
+- [ ] Implement final prototype
+
 #### Gather requirements - 10/09
 Using the techniques outlined in the requirements section of the plan, we will gain understanding of the needs of our users, the problem space, and the intentions for our application. 
 
