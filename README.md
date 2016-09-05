@@ -38,19 +38,25 @@ The depth of user interaction is also a lot deeper than other news aggregations.
 ## Team: 
 ### Roles and Responsibilities
 
-Fang Wan
+#### Fang Wan
 Id : 
+
 Role: Design and content
+
 Degree: B. IT
 
-Adam Smith
+#### Adam Smith
 Id: s43944875
+
 Role: Back-end
+
 Degree: B. IT
 
-Zachariah Strauss
+#### Zachariah Strauss
 Id: s43587713
+
 Role: Front-end
+
 Degree: B. IT
 
 ### Decisions 
@@ -63,7 +69,7 @@ Any conflicts between team members will be resolved through discussion as soon a
 
 Poor performance will be an issue if team members don’t get their allocated work completed as specified in the Plan. Offending members will have to complete additional work in proportional to the work they were supposed to do. 
 
-## Communications: 
+## Communications
 ### Meetings
 
 Meetings will be had during the workshop sessions on Wednesday 4pm along with ‘virtual’ slack meetings when necessary. 
@@ -127,7 +133,7 @@ Identify the key tasks that need to be completed and when. Identify:
  • Resources – equipment or other tools/people you might need. 
 
 
-## Tags:
+## Tags
 Social networks, Mobile Social Software, Information Sharing, Natural User Interfaces, Awareness
 
 ## Stand-ups
