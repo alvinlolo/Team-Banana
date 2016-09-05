@@ -76,7 +76,7 @@ Poor performance will be an issue if team members don’t get their allocated wo
 ## Communications
 ### Meetings
 
-Meetings will be had during the workshop sessions on Wednesday 4pm along with ‘virtual’ slack meetings when necessary. 
+Meetings will be held during the workshop sessions on Wednesday 4pm along with ‘virtual’ slack meetings when necessary. 
 
 ### Storage
 
