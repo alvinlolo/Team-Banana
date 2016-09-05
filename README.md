@@ -124,11 +124,6 @@ Using our basic application, we will run process mapping and camera studies on u
 #### Implement final prototype - 28/10
 During this final stage, small changes will be added and further user-testing will be done as required.
 
-Identify the key tasks that need to be completed and when. Identify: 
-• Project phases e.g. research; requirements; design; construction;
- • Key deliverables for each phase (Milestones) ;2
- • Resources – equipment or other tools/people you might need. 
-
 
 ## Stand-ups
 This is where stand-up reports will be logged with the following format:
