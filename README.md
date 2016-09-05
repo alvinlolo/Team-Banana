@@ -8,7 +8,7 @@ Many people are uninterested in reading an article for two minutes, but are more
 
 We want our application to feel as immediately rewarding as taking a selfie or swiping left and right through Tinder, but still be informative and have as much depth and intrigue as news is able to offer.
 
-!(mockup.png)
+![Mockup](mockup.png)
 
 The core of our application is based on video, and a timestamp-based commenting system. Users can swipe left and right to change videos and up and down to vote on them. Votes are used to predict content that users want to see in the future, along with determining the order of videos. Users can interact with the video by commenting at particular time or selecting snips of the video to share. When watching the video, comments appear at their correlated time and a heatmap is visible of the aggregated snippets. 
 
