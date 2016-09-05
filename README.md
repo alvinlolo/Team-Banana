@@ -42,19 +42,19 @@ The depth of user interaction is also a lot deeper than other news aggregations.
 |ID|s43693845|
 |---|---|
 |Role|Design and content|
-|Degree  |B. IT|
+|Degree  |Bachelor of Information Technology|
 
 #### Adam Smith
 |ID|s43944875|
 |---|---|
-|Role|Back-end|
-|Degree|B. IT|
+|Role|Back-end and native code|
+|Degree|Bachelor of Information Technology|
 
 #### Zachariah Strauss
 |ID|s43587713|
 |---|---|
-|Role|Front-end|
-|Degree|B. IT|
+|Role|Front-end and protoyping|
+|Degree|Bachelor of Information Technology|
 
 ### Decisions 
 
