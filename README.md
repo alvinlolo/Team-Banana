@@ -1,5 +1,5 @@
 # Proposal
-## Introduction: 
+## Introduction 
 Old media is losing its grip on today’s population, and with it, people are becoming less informed. Our proposal is an app that gives people a hot-take on real news stories and events in a way that is not only engrossing, but that engenders conversation.
 
 It’s Twitch.tv meets Snapchat, for news :wink:
