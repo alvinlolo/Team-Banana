@@ -21,15 +21,20 @@ Our application’s initial design and goals take inspiration from a number of e
 * Snapchat
 	* Stories Feature and directional tile-based navigation
 * Twitch.tv
-	* Live commenting and consuming video en masse
+	* Live commenting
+	* Consuming video en masse
 * Soundcloud
 	* Timestamp based commenting
 * Genius
 	* Annotation of external content
 * Reddit
-	* Virality and curation through voting system
+	* Virality
+	* Curation through voting system
 * Medium
 	* Highlighting important parts of content
+* Youtube
+	* Serving video content
+	* Recommendation system
 
 Our application differs from these applications by being entirely mobile focused with emphasis on time. Other applications, such as Twitch or Medium, are built for a user base that has time to consume lots of content in an extended period of time. Hot-Take interactions take only a handful of minutes and show only the most important things. To achieve this content is only a couple of minutes long, the heat map shows the most popular parts, and visible comments directly correlate to what's on screen.
 
