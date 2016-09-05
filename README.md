@@ -35,7 +35,7 @@ Our application differs from these from these applications by being entirely mob
 
 The depth of user interaction is also a lot deeper than other news aggregations. For example reddit allows sharing of news links and media and community response through commenting. Hot-Take allows users fine grained control over which segment of the news they want to talk about. The heatmap also allows the user base as a whole to decide what the most important parts of the video are. 
 
-## Team: 
+## Team:
 ### Roles and Responsibilities
 
 #### Fang Wan
