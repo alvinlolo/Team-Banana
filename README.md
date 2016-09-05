@@ -136,9 +136,9 @@ Social networks, Mobile Social Software, Information Sharing, Natural User Inter
 ## Stand-ups
 This is where stand-up reports will be logged with the following format:
 
-Week #x
-Team member name
-What did I do since last meeting?
-What will I do now until the next meeting?
-What is stopping me from getting stuff done?
+|Week|#X|
+|Team member name||
+|What did I do since last meeting?||
+|What will I do now until the next meeting?||
+|What is stopping me from getting stuff done?||
 
