@@ -8,6 +8,8 @@ Many people are uninterested in reading an article for two minutes, but are more
 
 We want our application to feel as immediately rewarding as taking a selfie or swiping left and right through Tinder, but still be informative and have as much depth and intrigue as news is able to offer.
 
+!(mockup.png)
+
 The core of our application is based on video, and a timestamp-based commenting system. Users can swipe left and right to change videos and up and down to vote on them. Votes are used to predict content that users want to see in the future, along with determining the order of videos. Users can interact with the video by commenting at particular time or selecting snips of the video to share. When watching the video, comments appear at their correlated time and a heatmap is visible of the aggregated snippets. 
 
 ### Audience
@@ -78,13 +80,13 @@ Meetings will be had during the workshop sessions on Wednesday 4pm along with �
 
 ### Storage
 
-All files will be stored on github and will make use of github’s inbuilt version control systems. Files too large for github will be stored on google drive. 
+All files will be stored on github and will make use of github’s inbuilt version control systems. Internal files, such as brainstorming, will be stored on google drive. 
 
 ### Social Platforms
 
-Slack will be used for all communication outside workshop sessions. Slack’s excellent plugin and bot functionality allows integration with github and can provide organisational notifications for improved productivity.
+Slack will be used for all communication outside workshop sessions. Slack’s excellent plugin and bot functionality allows integration with github and can provide organisational notifications for improved productivity. Zenhub will be used to manage tasks and issues as it directly integrates with git and is very feature rich. 
 
-Where and when will your team meet and how will you all communicate?1 Where will files be stored and shared? What are the file naming conventions? Identify the social platform/s your team has adopted and explain the choice. How will it facilitate communication and / or file sharing? 
+ 
 ## Plan:
 There will be four stages during the development cycle of the application: research, requirements, design, and construction. It is not the intention of this team to have completed this cycle once during the semester, but to continue to complete it as we further iterate upon our design.
 
