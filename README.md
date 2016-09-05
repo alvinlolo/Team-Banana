@@ -130,9 +130,6 @@ Identify the key tasks that need to be completed and when. Identify:
  • Resources – equipment or other tools/people you might need. 
 
 
-## Tags
-Social networks, Mobile Social Software, Information Sharing, Natural User Interfaces, Awareness
-
 ## Stand-ups
 This is where stand-up reports will be logged with the following format:
 
@@ -143,3 +140,6 @@ This is where stand-up reports will be logged with the following format:
 |What will I do now until the next meeting?||
 |What is stopping me from getting stuff done?||
 
+
+# Tags
+Social networks, Mobile Social Software, Information Sharing, Natural User Interfaces, Awareness
