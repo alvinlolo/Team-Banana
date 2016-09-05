@@ -142,4 +142,8 @@ This is where stand-up reports will be logged with the following format:
 
 
 # Tags
-Social networks, Mobile Social Software, Information Sharing, Natural User Interfaces, Awareness
+## Social and Mobile
+`Social networks`, `Mobile Social Software`, `Information Sharing`, `Natural User Interfaces`, `Awareness`
+
+## News
+`summary`, `commentary`
