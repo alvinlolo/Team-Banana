@@ -39,25 +39,22 @@ The depth of user interaction is also a lot deeper than other news aggregations.
 ### Roles and Responsibilities
 
 #### Fang Wan
-|ID   |  s43693845 |
+|ID|s43693845|
 |---|---|
-|Role  | Design and content   |
-|Degree  |B. IT   |
-|   |   |
+|Role|Design and content|
+|Degree  |B. IT|
 
 #### Adam Smith
-|ID   |  s43944875 |
+|ID|s43944875|
 |---|---|
-|Role  | Back-end   |
-|Degree  |B. IT   |
-|   |   |
+|Role|Back-end|
+|Degree|B. IT|
 
 #### Zachariah Strauss
-|ID   |  s43587713 |
+|ID|s43587713|
 |---|---|
-|Role  | Front-end   |
-|Degree  |B. IT   |
-|   |   |
+|Role|Front-end|
+|Degree|B. IT|
 
 ### Decisions 
 
