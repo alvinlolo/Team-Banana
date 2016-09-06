@@ -46,7 +46,7 @@ The depth of user interaction is also a lot deeper than other news aggregations.
 ### Roles and Responsibilities
 
 #### Fang Wan
-|ID|s43693845|
+|ID|s43983687|
 |---|---|
 |Role|Design and content|
 |Degree  |Bachelor of Information Technology|
