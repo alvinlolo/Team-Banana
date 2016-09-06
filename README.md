@@ -134,7 +134,7 @@ We will develop a basic implementation of our application to be used in further 
 Using various APIs, we will connect our application to video content to simulate the experience one might have when using the application. 
 
 #### Gather feedback - 19/10
-Using our basic application, we will run process mapping and camera studies on users to test how they will use it, whether the core mechanics are intuitive, and address any flaws in our design.
+Using our basic application, we will run process mapping and camera studies on users to test how they will use it and how they feel about it, whether the core mechanics are intuitive, and address any flaws in our design.
 
 #### Implement final prototype - 28/10
 During this final stage, small changes will be added and further user-testing will be done as required.
