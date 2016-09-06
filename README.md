@@ -37,7 +37,8 @@ Our application’s initial design and goals take inspiration from a number of e
 * Youtube
 	* Serving video content
 	* Recommendation system
-
+*Panda TV
+	*Real-live communication and comment
 Our application differs from these applications by being entirely mobile focused with emphasis on time. Other applications, such as Twitch or Medium, are built for a user base that has time to consume lots of content in an extended period of time. Hot-Take interactions take only a handful of minutes and show only the most important things. To achieve this content is only a couple of minutes long, the heat map shows the most popular parts, and visible comments directly correlate to what's on screen.
 
 The depth of user interaction is also a lot deeper than other news aggregations. For example reddit allows sharing of news links and media and community response through commenting. Hot-Take allows users fine grained control over which segment of the news they want to talk about. The heatmap also allows the user base as a whole to decide what the most important parts of the video are. 
@@ -91,7 +92,7 @@ Slack will be used for all communication outside workshop sessions. Slack’s ex
 There will be four stages during the development cycle of the application: research, requirements, design, and construction. It is not the intention of this team to have completed this cycle once during the semester, but to continue to complete it as we further iterate upon our design.
 
 ### Research
-Research is not limited to gathering information through passive means. We will be developing a number of prototypes during development, and these prototypes will provide necessary information to adjust the scope of the application and allow for further investigation of requirements.
+Research is not limited to gathering information through passive means. We will be developing a number of prototypes during development, and these prototypes will provide necessary information to adjust the scope of the application and allow for further investigation of requirements after we use them to do some test on people.
 
 ### Requirements
 The process of gathering requirements involves background research, context investigation and problem space definition.
@@ -105,6 +106,7 @@ Our requirements will be gathered through the following techniques:
 	* To gather information about changes in user’s past experiences with social media and news
 * Process mapping
 	* To confirm the user interface being designed is appropriate
+
 
 ### Design
 The design will involve a number of mobile and technologies.
