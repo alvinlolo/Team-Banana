@@ -49,7 +49,7 @@ The depth of user interaction is also a lot deeper than other news aggregations.
 |ID|s43983687|
 |---|---|
 |Role|Design and content|
-|Degree  |Bachelor of Information Technology|
+|Degree  |Master of Computer Science|
 
 #### Adam Smith
 |ID|s43944875|
