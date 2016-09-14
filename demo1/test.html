@@ -33,6 +33,12 @@
             }
 
         </style>
+        <script type="text/javascript">
+            window.onbeforeunload = function () {
+              window.scrollTo(0,0);
+            }
+
+        </script>
 
         <video id="vid" src="sample.m4v" autoplay poster="posterimage.png" width="100%">
 
@@ -150,11 +156,14 @@
                     if(comments[seconds] != undefined){
                         var commentsDiv = document.getElementById("comments");
 
-                        var commentDiv = document.createElement("div");
-                        commentDiv.className = "comment";
-                        commentDiv.appendChild(document.createTextNode(comments[seconds]));
-                        // commentsDiv.appendChild(commentDiv);
-                        commentsDiv.insertBefore(commentDiv, commentsDiv.firstChild);
+                        for (var comment in comments[seconds]){
+                            var comment = comments[seconds][comment]
+                            var commentDiv = document.createElement("div");
+                            commentDiv.className = "comment";
+                            commentDiv.appendChild(document.createTextNode(comment));
+                            // commentsDiv.appendChild(commentDiv);
+                            commentsDiv.insertBefore(commentDiv, commentsDiv.firstChild);
+                        }
                     }
 
                 }
