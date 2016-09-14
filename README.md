@@ -159,6 +159,13 @@ This is where stand-up reports will be logged with the following format:
 |What will I do now until the next meeting?|Do some user testing, iterate and begin react-native work|
 |What is stopping me from getting stuff done?|Unfamiliarity with ZenHub|
 
+|Week|#8|
+|----|----
+|Team member name|Fang Wan|
+|What did I do since last meeting?|Design interface|
+|What will I do now until the next meeting?|built prototype via react-native and do some user test|
+|What is stopping me from getting stuff done?|Unfamiliarity with ZenHub|
+
 
 # Tags
 ## Social and Mobile
