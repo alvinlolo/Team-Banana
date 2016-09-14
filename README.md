@@ -145,12 +145,12 @@ During this final stage, small changes will be added and further user-testing wi
 ## Stand-ups
 This is where stand-up reports will be logged with the following format:
 
-|Week|#X|
+|Week|#8|
 |----|----
-|Team member name||
-|What did I do since last meeting?||
-|What will I do now until the next meeting?||
-|What is stopping me from getting stuff done?||
+|Team member name|Adam|
+|What did I do since last meeting?|Created desktop demonstration|
+|What will I do now until the next meeting?|Move development side over to react-native|
+|What is stopping me from getting stuff done?|Unfamiliarity with ZenHub|
 
 
 # Tags
