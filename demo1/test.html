@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Example</title>
+        <script src="comments.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <style>
+            #comments {
+                width: 100%;
+                height: 100vh;
+                background-color: lightgrey;
+                display: block;
+                padding-top: 10px;
+            }
+
+            .comment {
+                font-family: Arial;
+                font-size: 20pt;
+                background-color: white;
+                margin: 10px;
+                padding: 3px;
+                border-radius: 2px;
+                -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+                box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+            }
+
+            video {
+                margin: 0;
+                padding: 0;
+
+            }
+
+        </style>
+
+        <video id="vid" src="sample.m4v" autoplay poster="posterimage.png" width="100%">
+
+        </video>
+
+        <script type="text/javascript">
+            var vid = document.getElementById("vid");
+            var completed = [];
+
+            vid.onclick = function() {
+                vid.paused ? vid.play() : vid.pause();
+            }
+            vid.ontimeupdate = function() {
+                var seconds = parseInt(vid.currentTime)
+
+                if (completed.indexOf(seconds) == -1){
+                    completed.push(seconds);
+
+                    if(comments[seconds] != undefined){
+                        var commentsDiv = document.getElementById("comments");
+
+                        var commentDiv = document.createElement("div");
+                        commentDiv.className = "comment";
+                        commentDiv.appendChild(document.createTextNode(comments[seconds]));
+                        // commentsDiv.appendChild(commentDiv);
+                        commentsDiv.insertBefore(commentDiv, commentsDiv.firstChild);
+                    }
+
+                }
+            };
+        </script>
+
+        <div id="comments">
+            <div></div>
+        </div>
+
+    </body>
+</html>
