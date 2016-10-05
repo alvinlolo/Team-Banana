@@ -1,5 +1,6 @@
 # Proposal: Hot-Take
 [Captain's Log](https://docs.google.com/document/d/1_xTiX_AcGPrPmlDdi0WIgWZrGFMB_M9RmbVDO5YmOJU/edit?usp=sharing)
+
 *A log of what the team has been up to. Transparent log of team planning and collaboration*
 ## Introduction 
 Old media is losing its grip on today’s population, and with it, people are becoming less informed. Our proposal is an app that gives people a hot-take on real news stories and events in a way that is not only engrossing, but that engenders conversation.
