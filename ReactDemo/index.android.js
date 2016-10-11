@@ -9,7 +9,8 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  ScrollView
 } from 'react-native';
 
 class ReactDemo extends Component {
