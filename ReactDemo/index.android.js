@@ -4,9 +4,16 @@ import{ AppRegistry, ScrollView, Image, Text, View, StyleSheet, Dimensions} from
 class Main extends Component {
     render() {
         return(
-            <ScrollView pagingEnabled={true}>
-                <View style={styles.topbox}/>
-                <View style={styles.bottombox}/>
+
+            <ScrollView horizontal={true}>
+                <ScrollView pagingEnabled={true}>
+                    <View style={styles.topbox}/>
+                    <View style={styles.bottombox}/>
+                </ScrollView>
+                <ScrollView pagingEnabled={true}>
+                    <View style={styles.topbox}/>
+                    <View style={styles.bottombox}/>
+                </ScrollView>
             </ScrollView>
         );
     }
