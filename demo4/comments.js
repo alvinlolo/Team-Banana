@@ -1,5 +1,5 @@
 comments = {
-    0: ["nice dock"],
+    0: ["nice dock this is really long comment, really long, really really long"],
     1: ["looks like a nice day", "what's the temp?"],
     5: ["would love to own a boat"],
     6: ["oh damn!"],
