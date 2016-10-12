@@ -6,28 +6,16 @@ import Video from 'react-native-video';
 class Main extends Component {
     render() {
         return(
+            // Red  Yellow
+            // Pink Green
             <ScrollView horizontal={true}>
                 <ScrollView pagingEnabled={true}>
-                    <View style={styles.topbox}>
-                        <Video source={{uri: "broadchurch", mainVer: 1, patchVer: 0}} // Looks for .mp4 file (background.mp4) in the given expansion version.
-                               rate={1.0}                   // 0 is paused, 1 is normal.
-                               volume={1.0}                 // 0 is muted, 1 is normal.
-                               muted={false}                // Mutes the audio entirely.
-                               paused={false}               // Pauses playback entirely.
-                               resizeMode="cover"           // Fill the whole screen at aspect ratio.
-                               repeat={true}                // Repeat forever.
-                               onLoadStart={this.loadStart} // Callback when video starts to load
-                               onLoad={this.setDuration}    // Callback when video loads
-                               onProgress={this.setTime}    // Callback every ~250ms with currentTime
-                               onEnd={this.onEnd}           // Callback when playback finishes
-                               onError={console.log(this.videoError)}    // Callback when video cannot be loaded
-                               style={styles.backgroundVideo} />
-                   </View>
-                    <View style={styles.bottombox}/>
+                    <View style={styles.topleft}/>
+                    <View style={styles.bottomleft}/>
                 </ScrollView>
                 <ScrollView pagingEnabled={true}>
-                    <View style={styles.topbox}/>
-                    <View style={styles.bottombox}/>
+                    <View style={styles.topright}/>
+                    <View style={styles.bottomright}/>
                 </ScrollView>
             </ScrollView>
         );
@@ -35,14 +23,25 @@ class Main extends Component {
 }
 
 const styles = StyleSheet.create({
-    topbox: {
+    topleft: {
         height: Dimensions.get('window').height,
         width: Dimensions.get('window').width,
+        backgroundColor: '#fc2a05'
     },
-    bottombox: {
+    topright: {
         height: Dimensions.get('window').height,
         width: Dimensions.get('window').width,
-        backgroundColor: '#54c31f'
+        backgroundColor: '#f2e210'
+    },
+    bottomleft: {
+        height: Dimensions.get('window').height,
+        width: Dimensions.get('window').width,
+        backgroundColor: '#ff09fd'
+    },
+    bottomright: {
+        height: Dimensions.get('window').height,
+        width: Dimensions.get('window').width,
+        backgroundColor: '#57e00d'
     },
     backgroundVideo: {
       position: 'absolute',
