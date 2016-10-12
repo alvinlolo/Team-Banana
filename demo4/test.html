@@ -4,12 +4,15 @@
         <meta charset="utf-8">
         <title>Example</title>
         <script src="comments.js" charset="utf-8"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
     </head>
     <body>
         <style>
             body {
                 padding: 0;
                 margin: 0;
+                font-family: 'Roboto', sans-serif;
             }
 
             #comments {
@@ -18,18 +21,82 @@
                 background-color: lightgrey;
                 display: block;
                 padding-top: 10px;
+                font-size: 28pt;
+                position: relative;
+            }
+
+            .comment-container{
+                background-color: white;
+                margin: 10px 0;
+                padding: 50px;
+                border-radius: 2px;
+                /*-webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+                box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75); */
+            }
+
+            .vote, .comment {
+                box-sizing: border-box;
+                display: inline-block;
+            }
+
+            .up-vote, .down-vote{
+                border-right: 10px solid; 
+                border-bottom: 10px solid;
+                width: 40px; height: 40px;
+                border-color: #C9C9C9;
+                margin: 0 auto
+                
+            }
+
+            .up-vote {
+                transform: rotate(-135deg);
+            }
+
+            .down-vote {
+                transform: rotate(45deg);
+            }
+
+            .vote{
+                width: 10%;
+                text-align: center;
             }
 
             .comment {
+                width: 90%;
                 font-family: Arial;
-                font-size: 20pt;
+                color: #494949
+                
+            }
+
+            .comment-input {
+                width: 100%;
+                position: absolute;
+                bottom: 0;
                 background-color: white;
-                margin: 10px;
-                padding: 3px;
-                border-radius: 2px;
-                -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
-                -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
-                box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+
+            }
+
+            .comment-input input{
+                display: inline-block;
+                
+            }
+
+            .comment-input input[type=text] {
+                width: 80%;
+                height: 175px;
+                border: 0;
+                font-size: 28pt;
+                padding: 25px 50px;
+                box-sizing: border-box;
+
+            }
+
+            .comment-input input[type=submit] {
+                font-size: 28pt;
+                color: #0076FF;
+                background-color: white;
+                border: 0;
             }
 
             video {
@@ -162,12 +229,25 @@
                         var commentsDiv = document.getElementById("comments");
 
                         for (var comment in comments[seconds]){
-                            var comment = comments[seconds][comment]
+                            var comment = comments[seconds][comment];
+                            var commentContainerDiv = document.createElement("div");
                             var commentDiv = document.createElement("div");
+                            var voteDiv =  document.createElement("div");
+                            var upVoteDiv =  document.createElement("div");
+                            var downVoteDiv =  document.createElement("div");
+                            commentContainerDiv.className = "comment-container";
                             commentDiv.className = "comment";
+                            voteDiv.className = "vote";
+                            upVoteDiv.className = "up-vote";
+                            downVoteDiv.className = "down-vote";
                             commentDiv.appendChild(document.createTextNode(comment));
+                            voteDiv.appendChild(upVoteDiv);
+                            voteDiv.appendChild(document.createTextNode("1"));
+                            voteDiv.appendChild(downVoteDiv);
                             // commentsDiv.appendChild(commentDiv);
-                            commentsDiv.insertBefore(commentDiv, commentsDiv.firstChild);
+                            commentContainerDiv.appendChild(commentDiv);
+                            commentContainerDiv.appendChild(voteDiv);
+                            commentsDiv.insertBefore(commentContainerDiv, commentsDiv.firstChild);
                         }
                     }
 
@@ -177,6 +257,12 @@
 
         <div id="comments">
             <div></div>
+            <div class="comment-input">
+                <form>
+                    <input type="text" name="comment" placeholder="enter a comment">
+                    <input type="submit" value="Send">
+                </form>
+            </div>
         </div>
 
     </body>
