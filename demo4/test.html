@@ -5,6 +5,7 @@
         <title>Example</title>
         <script src="comments.js" charset="utf-8"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="manifest" href="manifest.json">
 
     </head>
     <body>
@@ -42,12 +43,12 @@
             }
 
             .up-vote, .down-vote{
-                border-right: 10px solid; 
+                border-right: 10px solid;
                 border-bottom: 10px solid;
                 width: 40px; height: 40px;
                 border-color: #C9C9C9;
                 margin: 0 auto
-                
+
             }
 
             .up-vote {
@@ -67,7 +68,7 @@
                 width: 90%;
                 font-family: Arial;
                 color: #494949
-                
+
             }
 
             .comment-input {
@@ -80,7 +81,7 @@
 
             .comment-input input{
                 display: inline-block;
-                
+
             }
 
             .comment-input input[type=text] {
@@ -230,7 +231,7 @@
                     if((current[comment][1] + secondGap) < seconds){
                         commentsDiv.removeChild(current[comment][0]);
                         delete current[comment];
-                      
+
                     }
                 }
 

@@ -1,0 +1,14 @@
+{
+  "name": "Team Banana Demo 4",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "200x200",
+      "type": "image/png",
+      "density": 4.0
+    }
+  ],
+  "start_url": "test.html",
+  "display": "standalone",
+  "orientation": "landscape"
+}
