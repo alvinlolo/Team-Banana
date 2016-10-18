@@ -133,9 +133,12 @@
             var vid = document.getElementById("vid");
             var playButton = document.getElementById("play-pause");
             var timeControl = document.getElementById("time-control");
+            //current comment divs
             var current = [];
+            //completed seconds
             var completed = [];
             var secondGap = 3; //how long to wait before a video is deleted
+            
 
             
 
@@ -180,17 +183,59 @@
                 timeControl.value = controlValue;
 
                 for (var comment in current) {
-                    if((current[comment][1] + secondGap) < seconds){
+                    console.log(current[comment][1]);
+                    if(current[comment][1] < seconds - (vid.duration / 50) ||  current[comment][1] > seconds + (vid.duration / 50)){
                         commentsDiv.removeChild(current[comment][0]);
+                        console.log(completed);
+                        var jk = current[comment][1];
+                        var index = completed.indexOf(jk);
+                        if (index > -1) {
+                            completed.splice(index, 1);
+                        }
+                        console.log(completed);
                         delete current[comment];
 
                     }
                 }
 
-                if (completed.indexOf(seconds) == -1){
-                    completed.push(seconds);
+                /*if (completed.indexOf(seconds) == -1){
+                    completed.push(seconds);*/
 
-                    if(comments[seconds] != undefined){
+                    for (var i = seconds - (vid.duration / 50); i < seconds + (vid.duration / 50); i++) {
+                        i = Math.round(i);
+                        console.log(i);
+                        if (completed.indexOf(i) == -1) {
+                           // console.log(comments[i]);
+                            //console.log(completed);
+                            if (comments[i] != undefined) {
+                                for (var comment in comments[i]){
+                                    var comment = comments[i][comment];
+                                    var commentContainerDiv = document.createElement("div");
+                                    var commentDiv = document.createElement("div");
+                                    var voteDiv =  document.createElement("div");
+                                    var upVoteDiv =  document.createElement("div");
+                                    var downVoteDiv =  document.createElement("div");
+                                    commentContainerDiv.className = "comment-container";
+                                    commentDiv.className = "comment";
+                                    voteDiv.className = "vote";
+                                    upVoteDiv.className = "up-vote";
+                                    downVoteDiv.className = "down-vote";
+                                    commentDiv.appendChild(document.createTextNode(comment));
+                                    voteDiv.appendChild(upVoteDiv);
+                                    voteDiv.appendChild(document.createTextNode("0"));
+                                    voteDiv.appendChild(downVoteDiv);
+                                    // commentsDiv.appendChild(commentDiv);
+                                    commentContainerDiv.appendChild(commentDiv);
+                                    commentContainerDiv.appendChild(voteDiv);
+                                    commentsDiv.insertBefore(commentContainerDiv, commentsDiv.firstChild);
+                                    completed.push(i);
+                                    current.push([commentContainerDiv, i]);
+                                }
+                            }
+                        }
+                    }
+
+                    /*if(comments[seconds] != undefined){
 
                         for (var comment in comments[seconds]){
                             var comment = comments[seconds][comment];
@@ -206,7 +251,7 @@
                             downVoteDiv.className = "down-vote";
                             commentDiv.appendChild(document.createTextNode(comment));
                             voteDiv.appendChild(upVoteDiv);
-                            voteDiv.appendChild(document.createTextNode("1"));
+                            voteDiv.appendChild(document.createTextNode("0"));
                             voteDiv.appendChild(downVoteDiv);
                             // commentsDiv.appendChild(commentDiv);
                             commentContainerDiv.appendChild(commentDiv);
@@ -214,9 +259,9 @@
                             commentsDiv.insertBefore(commentContainerDiv, commentsDiv.firstChild);
                             current.push([commentContainerDiv, seconds]);
                         }
-                    }
+                    }*/
 
-                }
+                //}
             };
 
 
