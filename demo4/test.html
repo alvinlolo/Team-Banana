@@ -25,7 +25,7 @@
                 <div class="play-container">
                     <button type="button" class="play" id="play-pause"></button>
                 </div>
-                <div class="time-container">
+                <div id="time-container">
                     <input type="range" id="time-control" value="0";>
                 </div>
             </div>
@@ -114,11 +114,11 @@
                     if ( yDiff > 0 ) {
                         // window.scrollTo(0,document.body.scrollHeight);
                         smoothScroll("comments")
-                        document.getElementById("vid").pause()
+                        pause();
                     } else {
                         // window.scrollTo(0,0);
                         smoothScroll("vid")
-                        document.getElementById("vid").play()
+                        play();
                     }
                 }
                 /* reset values */
@@ -136,22 +136,48 @@
             var current = [];
             var completed = [];
             var secondGap = 3; //how long to wait before a video is deleted
+
             
-            vid.onclick = function() {
+
+
+            //play and pause video
+            playButton.onclick = vid.onclick = function() {
                 {
                 if (vid.paused == true) {
-                    vid.play();
-                    playButton.className="pause";
+                    play();
                 } else {
-                    vid.pause();
-                    playButton.className="play";
+                    pause();
                 }
-            }
+            };
+
+            //jump to time in video
+            timeControl.onchange = function() {
+                var time = vid.duration * (timeControl.value / 100);
+                vid.currentTime = time;
+            };
+
+            timeControl.onmousedown = function() {
+                vid.pause();
+            };
+
+            timeControl.onmouseup = function() {
+                vid.play();
+            };
 
             }
+
+            vid.oncanplay = function() {
+                drawGraph();    
+            }
+
+
             vid.ontimeupdate = function() {
                 var commentsDiv = document.getElementById("comments");
-                var seconds = parseInt(vid.currentTime)
+                var seconds = parseInt(vid.currentTime);
+                //time control seeker value
+                var controlValue = (100 / vid.duration) * vid.currentTime;
+
+                timeControl.value = controlValue;
 
                 for (var comment in current) {
                     if((current[comment][1] + secondGap) < seconds){
@@ -192,23 +218,46 @@
 
                 }
             };
-        </script>
-
-        <script type="text/javascript">
-            var vid = document.getElementById("vid");
-            var playButton = document.getElementById("play-pause");
-            var timeControl = document.getElementById("time-control");
 
 
-            playButton.onclick = function() {
-                if (vid.paused == true) {
-                    vid.play();
-                    playButton.className="pause";
-                } else {
-                    vid.pause();
-                    playButton.className="play";
-                }
+
+            function play() {
+                vid.play();
+                playButton.className="pause";
             }
+
+            function pause() {
+                vid.pause();
+                playButton.className="play";
+            }
+
+            function drawGraph() {
+                var timeDiv = document.getElementById("time-container");
+                var previousSecond = 0;
+                for (var i = 0; i < 50; i ++) {
+                    var second =  Math.round((i+ 1) * (vid.duration / 50));
+                    var height = 0;
+
+                    //console.log(comments[0]);
+                    for (commentTime in comments) {
+                        if (commentTime >= previousSecond && commentTime < second) {
+                            height = comments[commentTime].length * 20;
+                        }
+                    }
+
+                    height += 'px';
+                    previousSecond = second;
+                    
+                    var point = document.createElement("point");
+                    //amount moved left needed so points are spaced out 
+                    var left = ((i * 2) + 0.5) + '%';
+                    point.className = "point";
+                    point.style.height = height;
+                    point.style.left = left;
+                    timeDiv.appendChild(point);
+                };
+            }
+
         </script>
 
         <div id="comments">

@@ -5,6 +5,8 @@ comments = {
     6: ["oh damn!"],
     7: ["would love to go on a cruise", "anyone know where this is?"],
     8: ["It's somewhere in italy"],
-    15: ["That's a lot of water", "Those boats are going to get owned"],
-    30: ["Oh damn!", "wow"]
+    15: ["That's a lot of water", "Those boats are going to get owned", "nice", "cool", "I can't believe this."],
+    30: ["Oh damn!", "wow"],
+    60: ["Oh damn!", "wow", "cool", "awesome"]
+
 }

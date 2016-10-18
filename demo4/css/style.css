@@ -66,8 +66,10 @@ body {
     transform: translateY(-50%);
 }
 
-.time-container {
+#time-container {
     width: 90%;
+    position: relative;
+    height: 0;
 }
 
 .play-container {
@@ -75,7 +77,21 @@ body {
 }
 
 #time-control {
-    width: 100%
+    position: relative;
+    width: 100%;
+    z-index: 99;
+}
+
+.point{
+    height: 50px;
+    width: 2%;
+    left: 0.6%;
+    bottom: -10px;
+    position: absolute;
+    background-color: #3FD26A;
+    z-index: 1;
+
+
 }
 
 #comments {
@@ -165,3 +181,4 @@ video {
     margin: 0;
     padding: 0;
 }
+
