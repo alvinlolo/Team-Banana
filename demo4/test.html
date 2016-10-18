@@ -17,9 +17,21 @@
 
         </script>
 
-        <video id="vid" src="sample2.m4v" autoplay poster="posterimage.png" width="100%">
+        <div class="video-container">
+            <div id="heading">Cruise Ship does Damage</div>
+            <video id="vid" src="sample2.m4v" autoplay poster="posterimage.png" width="100%">
+            </video>
+            <div id="heatmap">
+                <div class="play-container">
+                    <button type="button" class="play" id="play-pause"></button>
+                </div>
+                <div class="time-container">
+                    <input type="range" id="time-control" value="0";>
+                </div>
+            </div>
+        </div>
 
-        </video>
+        
 
         <script type="text/javascript">
             function currentYPosition() {
@@ -119,12 +131,23 @@
 
         <script type="text/javascript">
             var vid = document.getElementById("vid");
+            var playButton = document.getElementById("play-pause");
+            var timeControl = document.getElementById("time-control");
             var current = [];
             var completed = [];
             var secondGap = 3; //how long to wait before a video is deleted
-
+            
             vid.onclick = function() {
-                vid.paused ? vid.play() : vid.pause();
+                {
+                if (vid.paused == true) {
+                    vid.play();
+                    playButton.className="pause";
+                } else {
+                    vid.pause();
+                    playButton.className="play";
+                }
+            }
+
             }
             vid.ontimeupdate = function() {
                 var commentsDiv = document.getElementById("comments");
@@ -169,6 +192,23 @@
 
                 }
             };
+        </script>
+
+        <script type="text/javascript">
+            var vid = document.getElementById("vid");
+            var playButton = document.getElementById("play-pause");
+            var timeControl = document.getElementById("time-control");
+
+
+            playButton.onclick = function() {
+                if (vid.paused == true) {
+                    vid.play();
+                    playButton.className="pause";
+                } else {
+                    vid.pause();
+                    playButton.className="play";
+                }
+            }
         </script>
 
         <div id="comments">
