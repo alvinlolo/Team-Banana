@@ -137,15 +137,12 @@
             var current = [];
             //completed seconds
             var completed = [];
-            var secondGap = 3; //how long to wait before a video is deleted
-
-
+           //var secondGap = 3; //how long to wait before a video is deleted
 
 
 
             //play and pause video
             playButton.onclick = vid.onclick = function() {
-                {
                 if (vid.paused == true) {
                     play();
                 } else {
@@ -167,7 +164,7 @@
                 vid.play();
             };
 
-            }
+            
 
             vid.oncanplay = function() {
                 drawGraph();
@@ -176,6 +173,7 @@
 
             vid.ontimeupdate = function() {
                 var commentsDiv = document.getElementById("comments");
+                var points = document.getElementsByClassName("point");
                 var seconds = parseInt(vid.currentTime);
                 //time control seeker value
                 var controlValue = (100 / vid.duration) * vid.currentTime;
@@ -183,7 +181,6 @@
                 timeControl.value = controlValue;
 
                 for (var comment in current) {
-                    console.log(current[comment][1]);
                     if(current[comment][1] < seconds - (vid.duration / 50) ||  current[comment][1] > seconds + (vid.duration / 50)){
                         commentsDiv.removeChild(current[comment][0]);
                         console.log(completed);
@@ -198,70 +195,42 @@
                     }
                 }
 
-                /*if (completed.indexOf(seconds) == -1){
-                    completed.push(seconds);*/
+                for (var i = seconds - (vid.duration / 50); i < seconds + (vid.duration / 50); i++) {
+                    
+                    i = Math.round(i);
+                    var currentPoint = Math.round((i / vid.duration) * 50);
 
-                    for (var i = seconds - (vid.duration / 50); i < seconds + (vid.duration / 50); i++) {
-                        i = Math.round(i);
-                        console.log(i);
-                        if (completed.indexOf(i) == -1) {
-                           // console.log(comments[i]);
-                            //console.log(completed);
-                            if (comments[i] != undefined) {
-                                for (var comment in comments[i]){
-                                    var comment = comments[i][comment];
-                                    var commentContainerDiv = document.createElement("div");
-                                    var commentDiv = document.createElement("div");
-                                    var voteDiv =  document.createElement("div");
-                                    var upVoteDiv =  document.createElement("div");
-                                    var downVoteDiv =  document.createElement("div");
-                                    commentContainerDiv.className = "comment-container";
-                                    commentDiv.className = "comment";
-                                    voteDiv.className = "vote";
-                                    upVoteDiv.className = "up-vote";
-                                    downVoteDiv.className = "down-vote";
-                                    commentDiv.appendChild(document.createTextNode(comment));
-                                    voteDiv.appendChild(upVoteDiv);
-                                    voteDiv.appendChild(document.createTextNode("0"));
-                                    voteDiv.appendChild(downVoteDiv);
-                                    // commentsDiv.appendChild(commentDiv);
-                                    commentContainerDiv.appendChild(commentDiv);
-                                    commentContainerDiv.appendChild(voteDiv);
-                                    commentsDiv.insertBefore(commentContainerDiv, commentsDiv.firstChild);
-                                    completed.push(i);
-                                    current.push([commentContainerDiv, i]);
-                                }
+                    if (points[currentPoint] != undefined) {
+                        points[currentPoint].style.backgroundColor = "#0BA4E8";
+                    }
+
+                    if (completed.indexOf(i) == -1) {
+                        if (comments[i] != undefined) {
+                            for (var comment in comments[i]){
+                                var comment = comments[i][comment];
+                                var commentContainerDiv = document.createElement("div");
+                                var commentDiv = document.createElement("div");
+                                var voteDiv =  document.createElement("div");
+                                var upVoteDiv =  document.createElement("div");
+                                var downVoteDiv =  document.createElement("div");
+                                commentContainerDiv.className = "comment-container";
+                                commentDiv.className = "comment";
+                                voteDiv.className = "vote";
+                                upVoteDiv.className = "up-vote";
+                                downVoteDiv.className = "down-vote";
+                                commentDiv.appendChild(document.createTextNode(comment));
+                                voteDiv.appendChild(upVoteDiv);
+                                voteDiv.appendChild(document.createTextNode("0"));
+                                voteDiv.appendChild(downVoteDiv);
+                                commentContainerDiv.appendChild(commentDiv);
+                                commentContainerDiv.appendChild(voteDiv);
+                                commentsDiv.insertBefore(commentContainerDiv, commentsDiv.firstChild);
+                                completed.push(i);
+                                current.push([commentContainerDiv, i]);
                             }
                         }
                     }
-
-                    /*if(comments[seconds] != undefined){
-
-                        for (var comment in comments[seconds]){
-                            var comment = comments[seconds][comment];
-                            var commentContainerDiv = document.createElement("div");
-                            var commentDiv = document.createElement("div");
-                            var voteDiv =  document.createElement("div");
-                            var upVoteDiv =  document.createElement("div");
-                            var downVoteDiv =  document.createElement("div");
-                            commentContainerDiv.className = "comment-container";
-                            commentDiv.className = "comment";
-                            voteDiv.className = "vote";
-                            upVoteDiv.className = "up-vote";
-                            downVoteDiv.className = "down-vote";
-                            commentDiv.appendChild(document.createTextNode(comment));
-                            voteDiv.appendChild(upVoteDiv);
-                            voteDiv.appendChild(document.createTextNode("0"));
-                            voteDiv.appendChild(downVoteDiv);
-                            // commentsDiv.appendChild(commentDiv);
-                            commentContainerDiv.appendChild(commentDiv);
-                            commentContainerDiv.appendChild(voteDiv);
-                            commentsDiv.insertBefore(commentContainerDiv, commentsDiv.firstChild);
-                            current.push([commentContainerDiv, seconds]);
-                        }
-                    }*/
-
-                //}
+                }
             };
 
 
@@ -280,10 +249,9 @@
                 var timeDiv = document.getElementById("time-container");
                 var previousSecond = 0;
                 for (var i = 0; i < 50; i ++) {
-                    var second =  Math.round((i+ 1) * (vid.duration / 50));
+                    var second =  Math.round((i + 1) * (vid.duration / 50));
                     var height = 0;
 
-                    //console.log(comments[0]);
                     for (commentTime in comments) {
                         if (commentTime >= previousSecond && commentTime < second) {
                             height = comments[commentTime].length * 20;
