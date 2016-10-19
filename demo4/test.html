@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        
+
 
         <script type="text/javascript">
             function currentYPosition() {
@@ -138,9 +138,9 @@
             //completed seconds
             var completed = [];
             var secondGap = 3; //how long to wait before a video is deleted
-            
 
-            
+
+
 
 
             //play and pause video
@@ -170,7 +170,7 @@
             }
 
             vid.oncanplay = function() {
-                drawGraph();    
+                drawGraph();
             }
 
 
@@ -292,9 +292,9 @@
 
                     height += 'px';
                     previousSecond = second;
-                    
+
                     var point = document.createElement("point");
-                    //amount moved left needed so points are spaced out 
+                    //amount moved left needed so points are spaced out
                     var left = ((i * 2) + 0.5) + '%';
                     point.className = "point";
                     point.style.height = height;

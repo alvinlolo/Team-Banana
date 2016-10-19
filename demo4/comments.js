@@ -8,5 +8,4 @@ comments = {
     15: ["That's a lot of water", "Those boats are going to get owned", "nice", "cool", "I can't believe this."],
     30: ["Oh damn!", "wow"],
     60: ["Oh damn!", "wow", "cool", "awesome"]
-
 }
