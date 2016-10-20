@@ -54,8 +54,8 @@ body {
     width: 40px;
     height: 80px;
     border: 0;
-    border-right: 20px solid #000;
-    border-left: 20px solid #000;
+    border-right: 20px solid #2c2c2c;
+    border-left: 20px solid #2c2c2c;
 }
 
 .valign {
@@ -70,6 +70,7 @@ body {
     width: 90%;
     position: relative;
     height: 0;
+    margin-top: -20px;
 }
 
 .play-container {
@@ -89,9 +90,13 @@ body {
     bottom: -10px;
     position: absolute;
     background-color: #3FD26A;
+    background: linear-gradient(#5FFBA7, #35BB6F);
     z-index: 1;
+}
 
-
+.point.active {
+    background-color: #35A5BB;
+    background: linear-gradient(#5FEDFB, #35A5BB);
 }
 
 #comments {
@@ -206,7 +211,7 @@ input[type=range] {
 }
 input[type=range]::-webkit-slider-runnable-track {
     width: 300px;
-    height: 5px;
+    height: 3px;
     background: none;
     border: none;
     border-radius: 3px;
@@ -230,7 +235,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 input[type=range]::-moz-range-track {
     width: 300px;
-    height: 5px;
+    height: 3px;
     background: none;
     border: none;
     border-radius: 3px;
@@ -252,7 +257,7 @@ input[type=range]:-moz-focusring{
 
 input[type=range]::-ms-track {
     width: 300px;
-    height: 5px;
+    height: 3px;
     
     /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
     background: transparent;

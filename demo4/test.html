@@ -133,13 +133,14 @@
             var vid = document.getElementById("vid");
             var playButton = document.getElementById("play-pause");
             var timeControl = document.getElementById("time-control");
+
+            //multiplier for adjusting comment grouping on heatmap
+            var gap = 3;
+            var graphFlag = false;
             //current comment divs
             var current = [];
             //completed seconds
             var completed = [];
-           //var secondGap = 3; //how long to wait before a video is deleted
-
-
 
             //play and pause video
             playButton.onclick = vid.onclick = function() {
@@ -160,6 +161,11 @@
                 vid.pause();
             };
 
+            timeControl.ontouchstart = function() {
+                vid.pause();
+            };
+
+
             timeControl.onmouseup = function() {
                 vid.play();
             };
@@ -167,9 +173,12 @@
             
 
             vid.oncanplay = function() {
-                drawGraph();
+                if (graphFlag == false) {
+                    drawGraph();
+                    graphFlag = true;
+                }
+                
             }
-
 
             vid.ontimeupdate = function() {
                 var commentsDiv = document.getElementById("comments");
@@ -181,27 +190,38 @@
                 timeControl.value = controlValue;
 
                 for (var comment in current) {
-                    if(current[comment][1] < seconds - (vid.duration / 50) ||  current[comment][1] > seconds + (vid.duration / 50)){
+                    if(current[comment][1] < seconds - (vid.duration / 50) * gap ||  current[comment][1] > seconds + (vid.duration / 50) * gap){
                         commentsDiv.removeChild(current[comment][0]);
-                        console.log(completed);
                         var jk = current[comment][1];
                         var index = completed.indexOf(jk);
                         if (index > -1) {
                             completed.splice(index, 1);
                         }
-                        console.log(completed);
                         delete current[comment];
 
                     }
                 }
 
-                for (var i = seconds - (vid.duration / 50); i < seconds + (vid.duration / 50); i++) {
+                for (var point in points) {
+                    var before = seconds - (vid.duration / 50) * gap;
+                    before = Math.round((before / vid.duration) * 50);
+                    var after = seconds + (vid.duration / 50) * gap;
+                    after = Math.round((after / vid.duration) * 50);
+                    if (point < before || point > after) {
+                        if (points[point] != undefined) {
+                            //points[point].style.backgroundColor = "#3FD26A";
+                            points[point].className = "point";
+                        }  
+                    }
+                }
+
+                for (var i = seconds - (vid.duration / 50) * gap; i < seconds + (vid.duration / 50) * gap; i++) {
                     
                     i = Math.round(i);
                     var currentPoint = Math.round((i / vid.duration) * 50);
-
                     if (points[currentPoint] != undefined) {
-                        points[currentPoint].style.backgroundColor = "#0BA4E8";
+                        //points[currentPoint].style.backgroundColor = "#0BA4E8";
+                        points[currentPoint].className = "point active";
                     }
 
                     if (completed.indexOf(i) == -1) {
@@ -254,19 +274,22 @@
 
                     for (commentTime in comments) {
                         if (commentTime >= previousSecond && commentTime < second) {
-                            height = comments[commentTime].length * 20;
+                            height = comments[commentTime].length * 30;
                         }
                     }
-
+                    var left = ((i * 2) + 0.5) + '%';
+                    var bottom = height / (-2) - 9 + 'px';
                     height += 'px';
                     previousSecond = second;
-
                     var point = document.createElement("point");
                     //amount moved left needed so points are spaced out
-                    var left = ((i * 2) + 0.5) + '%';
+                    
+                    
                     point.className = "point";
                     point.style.height = height;
                     point.style.left = left;
+                    point.style.bottom = bottom;
+                    console.log(bottom);
                     timeDiv.appendChild(point);
                 };
             }
