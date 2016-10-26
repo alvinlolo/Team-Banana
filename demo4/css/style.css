@@ -31,11 +31,10 @@ body {
     padding: 0 50px;
     position: absolute;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     bottom: 0;
     background-color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 100px;
 
 }
 
@@ -68,10 +67,14 @@ body {
 }
 
 #time-container {
-    width: 22%;
+    width: 90%;
     position: relative;
     height: 0;
     margin-top: -20px;
+}
+
+.play-container {
+    width: 10%;
 }
 
 #time-control {
