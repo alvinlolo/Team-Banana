@@ -21,7 +21,7 @@ body {
     color: white;
     background-color: #0BA4E8;
     padding: 40px 20px;
-
+    z-index: 100;
 
 }
 
