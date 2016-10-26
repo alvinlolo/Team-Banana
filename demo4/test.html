@@ -7,6 +7,13 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
         <link rel="manifest" href="manifest.json">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+
 
     </head>
     <body>
@@ -15,18 +22,41 @@
               window.scrollTo(0,0);
             }
 
+            $(document).ready(function(){
+              $('.videos-slider').slick({
+                  arrows: false
+              });
+
+              $('.videos-slider').css('height', $(window).height()+40 + 'px');
+            });
+
         </script>
 
-        <div class="video-container">
-            <div id="heading">Cruise Ship does Damage</div>
-            <video id="vid" src="sample2.m4v" autoplay poster="posterimage.png" width="100%">
-            </video>
-            <div id="heatmap">
-                <div class="play-container">
-                    <button type="button" class="play" id="play-pause"></button>
+        <div class="videos-slider">
+            <div class="video-container">
+                <div id="heading">Cruise Ship does Damage</div>
+                <video id="vid" src="sample2.m4v" autoplay poster="posterimage.png" width="100%">
+                </video>
+                <div id="heatmap">
+                    <div class="play-container">
+                        <button type="button" class="play" id="play-pause"></button>
+                    </div>
+                    <div id="time-container">
+                        <input type="range" id="time-control" value="0";>
+                    </div>
                 </div>
-                <div id="time-container">
-                    <input type="range" id="time-control" value="0";>
+            </div>
+            <div class="video-container">
+                <div id="heading">Cruise Ship does Damage</div>
+                <video id="vid" src="sample2.m4v" autoplay poster="posterimage.png" width="100%">
+                </video>
+                <div id="heatmap">
+                    <div class="play-container">
+                        <button type="button" class="play" id="play-pause"></button>
+                    </div>
+                    <div id="time-container">
+                        <input type="range" id="time-control" value="0";>
+                    </div>
                 </div>
             </div>
         </div>
@@ -170,14 +200,14 @@
                 vid.play();
             };
 
-            
+
 
             vid.oncanplay = function() {
                 if (graphFlag == false) {
                     drawGraph();
                     graphFlag = true;
                 }
-                
+
             }
 
             vid.ontimeupdate = function() {
@@ -211,12 +241,12 @@
                         if (points[point] != undefined) {
                             //points[point].style.backgroundColor = "#3FD26A";
                             points[point].className = "point";
-                        }  
+                        }
                     }
                 }
 
                 for (var i = seconds - (vid.duration / 50) * gap; i < seconds + (vid.duration / 50) * gap; i++) {
-                    
+
                     i = Math.round(i);
                     var currentPoint = Math.round((i / vid.duration) * 50);
                     if (points[currentPoint] != undefined) {
@@ -283,8 +313,8 @@
                     previousSecond = second;
                     var point = document.createElement("point");
                     //amount moved left needed so points are spaced out
-                    
-                    
+
+
                     point.className = "point";
                     point.style.height = height;
                     point.style.left = left;
