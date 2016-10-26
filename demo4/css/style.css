@@ -67,14 +67,14 @@ body {
     transform: translateY(-50%);
 }
 
-.time-container {
+#time-container {
     width: 22%;
     position: relative;
     height: 0;
     margin-top: -20px;
 }
 
-.time-control {
+#time-control {
     position: relative;
     width: 100%;
     z-index: 99;
