@@ -18,26 +18,66 @@
     </head>
     <body>
         <script type="text/javascript">
+            var videoIndex = 0;
+            var videoCount = 2;
             window.onbeforeunload = function () {
               window.scrollTo(0,0);
             }
 
             $(document).ready(function(){
+
               $('.videos-slider').slick({
                   arrows: false
               });
+              
 
-              $('.videos-slider').css('height', $(window).height()+40 + 'px');
+              //$('.videos-slider').css('height', $(window).height()+40 + 'px');
+
+              $('.videos-slider').on('swipe', function(event, slick, direction){
+                if (direction == "left"){
+                    if (videoIndex == videoCount-1) {
+                        videoIndex = 0
+                    } else {
+                        videoIndex ++;
+                    }
+                    
+                    changeVideo(videoIndex);                   
+                    
+                }
+
+                if (direction == "right"){
+                    if (videoIndex == 0) {
+                        videoIndex =  videoCount-1;
+                    } else {
+                        videoIndex --;
+                    }
+                    changeVideo(videoIndex); 
+                }
             });
+            changeVideo(0);
+            });
+
+            function changeVideo(vidIndex) {
+                $("#heading").text(headings[vidIndex]);
+                $('.point').remove();
+                $('.comment-container').remove();
+                vidName = 'vid' + vidIndex;
+                
+                vid = document.getElementById(vidName);
+                init2(vidName, vidIndex);
+                drawGraph(vid);
+            }
+
+            
 
         </script>
 
         <div class="video-container">
             <div id="heading">Cruise Ship does Damage</div>
             <div class="videos-slider">
-                <video id="vid" src="video1.m4v" autoplay poster="posterimage1.png" width="100%">
+                <video id="vid0" src="video1.m4v" autoplay poster="posterimage1.png" width="100%">
                 </video>
-                <video id="vid" src="video2.mp4" autoplay poster="posterimage2.png" width="100%">
+                <video id="vid1" src="video2.mp4" autoplay poster="posterimage2.png" width="100%">
                 </video>
             </div>
             <div id="heatmap">
@@ -149,7 +189,9 @@
 
 
         <script type="text/javascript">
-            var vid = document.getElementById("vid");
+
+        
+            var vid = document.getElementById("vid0");
             var playButton = document.getElementById("play-pause");
             var timeControl = document.getElementById("time-control");
 
@@ -161,117 +203,128 @@
             //completed seconds
             var completed = [];
 
-            //play and pause video
-            playButton.onclick = vid.onclick = function() {
-                if (vid.paused == true) {
-                    play();
-                } else {
-                    pause();
+            function init2(vidName, commentIndex) {
+                vid = document.getElementById(vidName);
+                completed = [];
+                current = [];
+
+                vid.currentTime = 0;
+
+                comments = commentsArray[commentIndex];
+                vid.addEventListener('loadedmetadata', function() {
+                    drawGraph(vid);
+                });
+
+
+                //play and pause video
+                playButton.onclick = vid.onclick = function() {
+                    if (vid.paused == true) {
+                        play();
+                    } else {
+                        pause();
+                    }
+                };
+
+                //jump to time in video
+                timeControl.onchange = function() {
+                    var time = vid.duration * (timeControl.value / 100);
+                    vid.currentTime = time;
+                };
+    
+                timeControl.onmousedown = function() {
+                    vid.pause();
+                };
+    
+                timeControl.ontouchstart = function() {
+                    vid.pause();
+                };
+    
+    
+                timeControl.onmouseup = function() {
+                    vid.play();
+                };
+
+                vid.oncanplay = function() {
+                    if (graphFlag == false) {
+                        //drawGraph();
+                        graphFlag = true;
+                    }
+
                 }
-            };
 
-            //jump to time in video
-            timeControl.onchange = function() {
-                var time = vid.duration * (timeControl.value / 100);
-                vid.currentTime = time;
-            };
-
-            timeControl.onmousedown = function() {
-                vid.pause();
-            };
-
-            timeControl.ontouchstart = function() {
-                vid.pause();
-            };
-
-
-            timeControl.onmouseup = function() {
-                vid.play();
-            };
-
-
-
-            vid.oncanplay = function() {
-                if (graphFlag == false) {
-                    drawGraph();
-                    graphFlag = true;
-                }
-
-            }
-
-            vid.ontimeupdate = function() {
-                var commentsDiv = document.getElementById("comments");
-                var points = document.getElementsByClassName("point");
-                var seconds = parseInt(vid.currentTime);
-                //time control seeker value
-                var controlValue = (100 / vid.duration) * vid.currentTime;
-
-                timeControl.value = controlValue;
-
-                for (var comment in current) {
-                    if(current[comment][1] < seconds - (vid.duration / 50) * gap ||  current[comment][1] > seconds + (vid.duration / 50) * gap){
-                        commentsDiv.removeChild(current[comment][0]);
-                        var jk = current[comment][1];
-                        var index = completed.indexOf(jk);
-                        if (index > -1) {
-                            completed.splice(index, 1);
+                vid.ontimeupdate = function() {
+                    var commentsDiv = document.getElementById("comments");
+                    var points = document.getElementsByClassName("point");
+                    var seconds = parseInt(vid.currentTime);
+                    //time control seeker value
+                    var controlValue = (100 / vid.duration) * vid.currentTime;
+    
+                    timeControl.value = controlValue;
+    
+                    for (var comment in current) {
+                        if(current[comment][1] < seconds - (vid.duration / 50) * gap ||  current[comment][1] > seconds + (vid.duration / 50) * gap){
+                            commentsDiv.removeChild(current[comment][0]);
+                            var jk = current[comment][1];
+                            var index = completed.indexOf(jk);
+                            if (index > -1) {
+                                completed.splice(index, 1);
+                            }
+                            delete current[comment];
+    
                         }
-                        delete current[comment];
-
                     }
-                }
-
-                for (var point in points) {
-                    var before = seconds - (vid.duration / 50) * gap;
-                    before = Math.round((before / vid.duration) * 50);
-                    var after = seconds + (vid.duration / 50) * gap;
-                    after = Math.round((after / vid.duration) * 50);
-                    if (point < before || point > after) {
-                        if (points[point] != undefined) {
-                            //points[point].style.backgroundColor = "#3FD26A";
-                            points[point].className = "point";
-                        }
-                    }
-                }
-
-                for (var i = seconds - (vid.duration / 50) * gap; i < seconds + (vid.duration / 50) * gap; i++) {
-
-                    i = Math.round(i);
-                    var currentPoint = Math.round((i / vid.duration) * 50);
-                    if (points[currentPoint] != undefined) {
-                        //points[currentPoint].style.backgroundColor = "#0BA4E8";
-                        points[currentPoint].className = "point active";
-                    }
-
-                    if (completed.indexOf(i) == -1) {
-                        if (comments[i] != undefined) {
-                            for (var comment in comments[i]){
-                                var comment = comments[i][comment];
-                                var commentContainerDiv = document.createElement("div");
-                                var commentDiv = document.createElement("div");
-                                var voteDiv =  document.createElement("div");
-                                var upVoteDiv =  document.createElement("div");
-                                var downVoteDiv =  document.createElement("div");
-                                commentContainerDiv.className = "comment-container";
-                                commentDiv.className = "comment";
-                                voteDiv.className = "vote";
-                                upVoteDiv.className = "up-vote";
-                                downVoteDiv.className = "down-vote";
-                                commentDiv.appendChild(document.createTextNode(comment));
-                                voteDiv.appendChild(upVoteDiv);
-                                voteDiv.appendChild(document.createTextNode("0"));
-                                voteDiv.appendChild(downVoteDiv);
-                                commentContainerDiv.appendChild(commentDiv);
-                                commentContainerDiv.appendChild(voteDiv);
-                                commentsDiv.insertBefore(commentContainerDiv, commentsDiv.firstChild);
-                                completed.push(i);
-                                current.push([commentContainerDiv, i]);
+    
+                    for (var point in points) {
+                        var before = seconds - (vid.duration / 50) * gap;
+                        before = Math.round((before / vid.duration) * 50);
+                        var after = seconds + (vid.duration / 50) * gap;
+                        after = Math.round((after / vid.duration) * 50);
+                        if (point < before || point > after) {
+                            if (points[point] != undefined) {
+                                //points[point].style.backgroundColor = "#3FD26A";
+                                points[point].className = "point";
                             }
                         }
                     }
-                }
-            };
-
+    
+                    for (var i = seconds - (vid.duration / 50) * gap; i < seconds + (vid.duration / 50) * gap; i++) {
+    
+                        i = Math.round(i);
+                        var currentPoint = Math.round((i / vid.duration) * 50);
+                        if (points[currentPoint] != undefined) {
+                            //points[currentPoint].style.backgroundColor = "#0BA4E8";
+                            points[currentPoint].className = "point active";
+                        }
+    
+                        if (completed.indexOf(i) == -1) {
+                            if (comments[i] != undefined) {
+                                for (var comment in comments[i]){
+                                    var comment = comments[i][comment];
+                                    var commentContainerDiv = document.createElement("div");
+                                    var commentDiv = document.createElement("div");
+                                    var voteDiv =  document.createElement("div");
+                                    var upVoteDiv =  document.createElement("div");
+                                    var downVoteDiv =  document.createElement("div");
+                                    commentContainerDiv.className = "comment-container";
+                                    commentDiv.className = "comment";
+                                    voteDiv.className = "vote";
+                                    upVoteDiv.className = "up-vote";
+                                    downVoteDiv.className = "down-vote";
+                                    commentDiv.appendChild(document.createTextNode(comment));
+                                    voteDiv.appendChild(upVoteDiv);
+                                    voteDiv.appendChild(document.createTextNode("0"));
+                                    voteDiv.appendChild(downVoteDiv);
+                                    commentContainerDiv.appendChild(commentDiv);
+                                    commentContainerDiv.appendChild(voteDiv);
+                                    commentsDiv.insertBefore(commentContainerDiv, commentsDiv.firstChild);
+                                    completed.push(i);
+                                    current.push([commentContainerDiv, i]);
+                                }
+                            }
+                        }
+                    }
+                };
+            }
 
 
             function play() {
@@ -284,34 +337,36 @@
                 playButton.className="play";
             }
 
-            function drawGraph() {
+            function drawGraph(vid) {
                 var timeDiv = document.getElementById("time-container");
                 var previousSecond = 0;
                 for (var i = 0; i < 50; i ++) {
                     var second =  Math.round((i + 1) * (vid.duration / 50));
+
                     var height = 0;
 
+                  
                     for (commentTime in comments) {
                         if (commentTime >= previousSecond && commentTime < second) {
                             height = comments[commentTime].length * 30;
                         }
                     }
+
                     var left = ((i * 2) + 0.5) + '%';
                     var bottom = height / (-2) - 9 + 'px';
                     height += 'px';
                     previousSecond = second;
                     var point = document.createElement("point");
-                    //amount moved left needed so points are spaced out
 
 
                     point.className = "point";
                     point.style.height = height;
                     point.style.left = left;
                     point.style.bottom = bottom;
-                    console.log(bottom);
                     timeDiv.appendChild(point);
                 };
-            }
+        }
+        
 
         </script>
 
