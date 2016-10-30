@@ -102,7 +102,7 @@ img {
 	display: flex;
 	align-items: center;
   	justify-content: center;
-  	
+
 }
 
 .hero.small {
@@ -121,6 +121,7 @@ img {
 	border-radius: 3px;
 	padding: 40px;
 	box-sizing: border-box;
+	text-align: center;
 }
 
 .card-img img {
@@ -174,7 +175,7 @@ footer h5 {
   .img {
   	margin: auto;
   	display: block;
-  	
+
   }
 
   .columns, .column{
@@ -197,5 +198,4 @@ footer h5 {
   section, footer {
 	padding: 40px 0;
 }
-
 }
