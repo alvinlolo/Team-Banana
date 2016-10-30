@@ -4,6 +4,7 @@
 *A log of what the team has been up to. Transparent log of team planning and collaboration. Read this as a guide to time spent and as documentation of work*
 
 [Drive link](https://drive.google.com/drive/folders/0B__YbDNzK-DNYTZ5UWFrTmdxRDg?usp=sharing)
+[Commit History](https://github.com/deco3500/Team-Banana/graphs/contributors)
 
 ##[Promo Website](https://deco3500.github.io/Team-Banana/Website/)
 
