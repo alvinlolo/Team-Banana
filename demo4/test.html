@@ -66,13 +66,14 @@
                 vid = document.getElementById(vidName);
                 init2(vidName, vidIndex);
                 drawGraph(vid);
+                play();
             }
 
 
 
         </script>
 
-        <div class="video-container">
+        <div class="video-container" id="main-slider">
             <div id="heading">Cruise Ship does Damage</div>
             <div class="videos-slider">
                 <video id="vid0" src="video1.m4v" autoplay poster="posterimage1.png" width="100%">
@@ -176,7 +177,7 @@
                         pause();
                     } else {
                         // window.scrollTo(0,0);
-                        smoothScroll("vid")
+                        smoothScroll("main-slider")
                         play();
                     }
                 }
