@@ -57,7 +57,7 @@ Hot-Take is the next evolution in social video news. It's as active and passive 
 
 8. Run user testing to determine future improvements
 	
-
+# Proposal
 ## Introduction 
 Old media is losing its grip on today’s population, and with it, people are becoming less informed. Our proposal is an app that gives people a hot-take on real news stories and events in a way that is not only engrossing, but that engenders conversation.
 
