@@ -1,9 +1,9 @@
 {
-  "name": "Team Banana Demo 4",
+  "name": "Hot Take",
   "icons": [
     {
       "src": "icon.png",
-      "sizes": "200x200",
+      "sizes": "512x512",
       "type": "image/png",
       "density": 4.0
     }
