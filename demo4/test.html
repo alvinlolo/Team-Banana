@@ -29,7 +29,7 @@
               $('.videos-slider').slick({
                   arrows: false
               });
-              
+
 
               //$('.videos-slider').css('height', $(window).height()+40 + 'px');
 
@@ -40,9 +40,9 @@
                     } else {
                         videoIndex ++;
                     }
-                    
-                    changeVideo(videoIndex);                   
-                    
+
+                    changeVideo(videoIndex);
+
                 }
 
                 if (direction == "right"){
@@ -51,7 +51,7 @@
                     } else {
                         videoIndex --;
                     }
-                    changeVideo(videoIndex); 
+                    changeVideo(videoIndex);
                 }
             });
             changeVideo(0);
@@ -62,13 +62,13 @@
                 $('.point').remove();
                 $('.comment-container').remove();
                 vidName = 'vid' + vidIndex;
-                
+
                 vid = document.getElementById(vidName);
                 init2(vidName, vidIndex);
                 drawGraph(vid);
             }
 
-            
+
 
         </script>
 
@@ -190,7 +190,7 @@
 
         <script type="text/javascript">
 
-        
+
             var vid = document.getElementById("vid0");
             var playButton = document.getElementById("play-pause");
             var timeControl = document.getElementById("time-control");
@@ -230,16 +230,16 @@
                     var time = vid.duration * (timeControl.value / 100);
                     vid.currentTime = time;
                 };
-    
+
                 timeControl.onmousedown = function() {
                     vid.pause();
                 };
-    
+
                 timeControl.ontouchstart = function() {
                     vid.pause();
                 };
-    
-    
+
+
                 timeControl.onmouseup = function() {
                     vid.play();
                 };
@@ -258,9 +258,9 @@
                     var seconds = parseInt(vid.currentTime);
                     //time control seeker value
                     var controlValue = (100 / vid.duration) * vid.currentTime;
-    
+
                     timeControl.value = controlValue;
-    
+
                     for (var comment in current) {
                         if(current[comment][1] < seconds - (vid.duration / 50) * gap ||  current[comment][1] > seconds + (vid.duration / 50) * gap){
                             commentsDiv.removeChild(current[comment][0]);
@@ -270,10 +270,10 @@
                                 completed.splice(index, 1);
                             }
                             delete current[comment];
-    
+
                         }
                     }
-    
+
                     for (var point in points) {
                         var before = seconds - (vid.duration / 50) * gap;
                         before = Math.round((before / vid.duration) * 50);
@@ -286,20 +286,20 @@
                             }
                         }
                     }
-    
+
                     for (var i = seconds - (vid.duration / 50) * gap; i < seconds + (vid.duration / 50) * gap; i++) {
-    
+
                         i = Math.round(i);
                         var currentPoint = Math.round((i / vid.duration) * 50);
                         if (points[currentPoint] != undefined) {
                             //points[currentPoint].style.backgroundColor = "#0BA4E8";
                             points[currentPoint].className = "point active";
                         }
-    
+
                         if (completed.indexOf(i) == -1) {
                             if (comments[i] != undefined) {
-                                for (var comment in comments[i]){
-                                    var comment = comments[i][comment];
+                                for (var comment in comments[i]["comment"]){
+                                    var comment = comments[i]["comment"][comment];
                                     var commentContainerDiv = document.createElement("div");
                                     var commentDiv = document.createElement("div");
                                     var voteDiv =  document.createElement("div");
@@ -312,7 +312,7 @@
                                     downVoteDiv.className = "down-vote";
                                     commentDiv.appendChild(document.createTextNode(comment));
                                     voteDiv.appendChild(upVoteDiv);
-                                    voteDiv.appendChild(document.createTextNode("0"));
+                                    voteDiv.appendChild(document.createTextNode(comments[i]["vote"]));
                                     voteDiv.appendChild(downVoteDiv);
                                     commentContainerDiv.appendChild(commentDiv);
                                     commentContainerDiv.appendChild(voteDiv);
@@ -345,10 +345,10 @@
 
                     var height = 0;
 
-                  
+
                     for (commentTime in comments) {
                         if (commentTime >= previousSecond && commentTime < second) {
-                            height = comments[commentTime].length * 30;
+                            height = comments[commentTime]["comment"].length * 30;
                         }
                     }
 
@@ -366,7 +366,7 @@
                     timeDiv.appendChild(point);
                 };
         }
-        
+
 
         </script>
 
