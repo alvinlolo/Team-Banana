@@ -157,6 +157,10 @@ footer h5 {
 
 @media (max-width: 700px) {
 
+  .hide-mobile {
+    display: none;
+  }
+
   .hero {
   	height: 500px;
   }
@@ -200,19 +204,28 @@ footer h5 {
 }
 }
 
+.frame-container {
+   width: 356.4px;
+   height: 633.6px;
+   padding: 0;
+   overflow: hidden;
+
+
+}
+
 iframe {
 	width: 1080px;
-    height: 1920px;
-    border: 0;
-    -ms-transform: scale(0.33);
-    -moz-transform: scale(0.33);
-    -o-transform: scale(0.33);
-    -webkit-transform: scale(0.33);
-    transform: scale(0.33);
+  height: 1920px;
+  border: 0;
+  -ms-transform: scale(0.33);
+  -moz-transform: scale(0.33);
+  -o-transform: scale(0.33);
+  -webkit-transform: scale(0.33);
+  transform: scale(0.33);
 
-    -ms-transform-origin: 0 0;
-    -moz-transform-origin: 0 0;
-    -o-transform-origin: 0 0;
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
 }
