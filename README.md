@@ -36,7 +36,19 @@ There are three ways to use this:
 	a. Navigate to the website in Google Chrome
 	
 ##Summary
-Hot-Take is the next evolution in social video news. It's as active and passive as the user wants it to be
+Today's news cannot compete with entertainment.
+
+Attempts have been made to merge the two, but the resulting media are often vapid and sensationalist. We need a new platform that leverages the mobile era, engages people on a visceral level, and actually informs them.
+
+Hot-Take is the next evolution in social video news.
+
+With its non-intrusive mobile form, the interest in and addiction to the platform comes from its inherently engaging nature, not its clickbait or nagging notifications. Its mobile first experience is designed to provide a heavily touch-based tiling video display system, a system that leverages the ease of use of mobile design. 
+
+In order to further define our target audience and filter out those it isn't intended for, Hot-Take exploits the their current familiarity with the tiling interface of Snapchat. Additionally, in order to appeal to users, engagement is very explicit and non-disruptive. The app tries to not visibly or surreptitiosly take choices away from the user.
+
+Hot-Take wants to bring the news to the Snapchat and Instagram generation by giving users the same shot of rewarding dopamine, but with stories that are actually worth their time.
+
+It's killer feature is the way it makes use of comments. Rather having to sift through the trash at the bottom of some clickbait article, comments are ranked by vote and linked to specific parts of the video. When you see something interesting happen on the video, you can guage the number of responses thanks to the on-screen heatmap, and then swipe up to see comments related to that exact period of time.
 
 ##Process
 *See captain's log for more details*
