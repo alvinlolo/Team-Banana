@@ -40,8 +40,9 @@ Our application’s initial design and goals take inspiration from a number of e
 * Youtube
 	* Serving video content
 	* Recommendation system
-*Panda TV
-	*Real-live communication and comment
+* Panda TV
+	* Real-live communication and comment
+	
 Our application differs from these applications by being entirely mobile focused with emphasis on time. Other applications, such as Twitch or Medium, are built for a user base that has time to consume lots of content in an extended period of time. Hot-Take interactions take only a handful of minutes and show only the most important things. To achieve this content is only a couple of minutes long, the heat map shows the most popular parts, and visible comments directly correlate to what's on screen.
 
 The depth of user interaction is also a lot deeper than other news aggregations. For example reddit allows sharing of news links and media and community response through commenting. Hot-Take allows users fine grained control over which segment of the news they want to talk about. The heatmap also allows the user base as a whole to decide what the most important parts of the video are. 
