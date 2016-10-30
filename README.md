@@ -40,6 +40,7 @@ Hot-Take is the next evolution in social video news. It's as active and passive 
 
 ##Process
 *See captain's log for more details*
+
 1. Establish problem
 
 2. Create whiteboard prototype
