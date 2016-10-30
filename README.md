@@ -1,10 +1,38 @@
 # App: Hot-Take
-[Captain's Log](https://docs.google.com/document/d/1_xTiX_AcGPrPmlDdi0WIgWZrGFMB_M9RmbVDO5YmOJU/edit?usp=sharing)
+##[Captain's Log](https://docs.google.com/document/d/1_xTiX_AcGPrPmlDdi0WIgWZrGFMB_M9RmbVDO5YmOJU/edit?usp=sharing)
 
 *A log of what the team has been up to. Transparent log of team planning and collaboration. Read this as a guide to time spent and as documentation of work*
 
-[Promo Website](https://deco3500.github.io/Team-Banana/Website/)
+##[Promo Website](https://deco3500.github.io/Team-Banana/Website/)
+
 *The promotional website of the application*
+
+##[Prototype](https://deco3500.github.io/Team-Banana/)
+
+*The final prototype of the application*
+
+There are three ways to use this:
+
+1. Laptop with touch screen:
+
+	a. Navigate to the website in Google Chrome
+	
+	b. Open the developer tools
+	
+	c. [Toggle the device toolbar](https://i.imgur.com/Dg30eMO.jpg)
+
+2. Android phone with Google Now launcher:
+
+	a. Navigate to the website in Google Chrome
+	
+	b. Open the settings menu and select "Add to homescreen"
+	
+	c. Open the app from your homescreen (*Note: If it doesn't appear, your launcher may not support this feature, try google now launcher*)
+	
+3. Mobile phone
+	
+	a. Navigate to the website in Google Chrome
+	
 
 ## Introduction 
 Old media is losing its grip on today’s population, and with it, people are becoming less informed. Our proposal is an app that gives people a hot-take on real news stories and events in a way that is not only engrossing, but that engenders conversation.
