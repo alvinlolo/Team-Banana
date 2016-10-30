@@ -107,6 +107,7 @@ body {
     padding-top: 10px;
     font-size: 28pt;
     position: relative;
+    z-index: 1000;
 }
 
 .comment-container{
