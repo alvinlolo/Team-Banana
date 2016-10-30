@@ -3,6 +3,8 @@
 
 *A log of what the team has been up to. Transparent log of team planning and collaboration. Read this as a guide to time spent and as documentation of work*
 
+[Drive link](https://drive.google.com/drive/folders/0B__YbDNzK-DNYTZ5UWFrTmdxRDg?usp=sharing)
+
 ##[Promo Website](https://deco3500.github.io/Team-Banana/Website/)
 
 *The promotional website of the application*
@@ -32,6 +34,27 @@ There are three ways to use this:
 3. Mobile phone
 	
 	a. Navigate to the website in Google Chrome
+	
+##Summary
+Hot-Take is the next evolution in social video news. It's as active and passive as the user wants it to be
+
+##Process
+*See captain's log for more details*
+1. Establish problem
+
+2. Create whiteboard prototype
+
+3. Create html prototype to test the core functionality
+
+4. Create digital prototype to test small features
+
+5. Run user testing and iterate
+
+6. Create react-native prototype to test the technology and tile-based navigation
+
+7. Create final html prototype
+
+8. Run user testing to determine future improvements
 	
 
 ## Introduction 
